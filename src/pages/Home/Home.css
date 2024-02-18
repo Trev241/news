@@ -1,0 +1,27 @@
+.home {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+}
+
+.top-section {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.latest-news-section,
+.featured-section {
+   margin-bottom: 40px;
+}
+
+.news-item,
+.article {
+   border-bottom: 1px solid #ccc;
+   padding-bottom: 20px;
+   margin-bottom: 20px;
+}
+
+.news-item:last-child,
+.article:last-child {
+   border-bottom: none;
+}
