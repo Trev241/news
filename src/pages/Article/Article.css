@@ -1,0 +1,17 @@
+.article-root {
+    display: flex;
+    justify-content: center;
+}
+
+.article-main {
+    background-color: white;
+    color: black;
+
+    max-width: 50%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 1rem 6rem;
+}
+
+.article-main img {
+    width: 100%;
+}
