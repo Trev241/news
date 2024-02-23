@@ -1,14 +1,16 @@
 import React from 'react';
 import './Home.css';
+import NavBar from "../../components/NavBar/NavBar.jsx";
 
 const Home = () => {
    return (
       <div>
+         <NavBar />
          <div className="home">
             <section className="top-section">
-               <a href="/">
-                  <img src="/src/images/logo.png" alt="SYT News Logo" width={150} height={50}/>
-               </a>
+               {/*<a href="/">*/}
+               {/*   <img src="/src/images/logo.png" alt="SYT News Logo" width={150} height={50}/>*/}
+               {/*</a>*/}
                <h1>SYT News</h1>
                <p>Stay updated with the latest news and updates</p>
             </section>
