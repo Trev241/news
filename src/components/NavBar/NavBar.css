@@ -37,3 +37,20 @@
 .navbar-link:hover {
    text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+   .navbar-item {
+      margin-right: 5px;
+   }
+
+   .navbar-link {
+      font-size: 12px;
+      padding: 3px 5px;
+   }
+
+   .navbar-logo img {
+      height: 20px;
+      width: 100px;
+   }
+
+}

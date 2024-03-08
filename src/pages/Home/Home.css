@@ -25,3 +25,24 @@
 .article:last-child {
    border-bottom: none;
 }
+
+
+@media screen and (max-width: 768px) {
+   .top-section h1 {
+      font-size: 24px;
+   }
+
+   .top-section p {
+      font-size: 16px; 
+   }
+
+   .news-item h3,
+   .article h3 {
+      font-size: 18px;
+   }
+
+   .news-item p,
+   .article p {
+      font-size: 14px; /* Reduce font size for smaller screens */
+   }
+}
