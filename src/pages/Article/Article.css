@@ -1,17 +1,16 @@
 .article-root {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.article-main {
-    background-color: white;
-    color: black;
-
+@media (min-width: 992px) {
+  .article-main {
     max-width: 50%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 1rem 6rem;
+  }
 }
 
-.article-main img {
-    width: 100%;
+@media (max-width: 992px) {
+  .article-main {
+    max-width: 100%;
+  }
 }

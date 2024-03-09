@@ -6,14 +6,14 @@ import "./Article.css";
 const Article = () => {
   return (
     <div>
-      <div className="article-root">
+      <div className="article-root my-5 px-5">
         <section className="article-main">
           <h1>TTC service changes starting Sunday</h1>
-          <p>
-            <i>Several changes to TTC service beginning this Sunday.</i>
+          <p className="lead">
+            Several changes to TTC service beginning this Sunday.
           </p>
 
-          <img src={image} />
+          <img className="img-fluid my-4" src={image} />
 
           <p>
             Starting Sunday the TTC is changing bus service on several key
