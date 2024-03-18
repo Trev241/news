@@ -8,14 +8,52 @@ import Footer from "./components/Footer/Footer.jsx";
 
 import "./scss/styles.scss";
 
+import article1 from "./assets/articles/nba.txt";
+import article2 from "./assets/articles/premier.txt";
+import article3 from "./assets/articles/putin.txt";
+import article4 from "./assets/articles/tax.txt";
+import article5 from "./assets/articles/ttc.txt";
+import article6 from "./assets/articles/worldcup.txt";
+
+import image1 from "./assets/articles/nba.jpg";
+import image2 from "./assets/articles/premier.jpg";
+import image3 from "./assets/articles/putin.jpg";
+import image4 from "./assets/articles/tax.jpg";
+import image5 from "./assets/articles/ttc.jpg";
+import image6 from "./assets/articles/worldcup.jpg";
+
 const App = () => {
+  const articles = {
+    nba: { contentPath: article1, image: image1 },
+    premier: { contentPath: article2, image: image2 },
+    putin: { contentPath: article3, image: image3 },
+    tax: { contentPath: article4, image: image4 },
+    ttc: { contentPath: article5, image: image5 },
+    worldcup: { contentPath: article6, image: image6 },
+  };
+
   return (
     <Router>
       <Navbar />
       <div>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/article" component={Article} />
+          <Route exact path="/article" component={Article} />
+          {Object.entries(articles).map((entry, idx) => {
+            return (
+              <Route
+                key={idx}
+                path={`/article/${entry[0]}`}
+                render={(props) => (
+                  <Article
+                    articlePath={entry[1].contentPath}
+                    imagePath={entry[1].image}
+                    {...props}
+                  />
+                )}
+              />
+            );
+          })}
           <Route path="/news" component={News} />
         </Switch>
       </div>
