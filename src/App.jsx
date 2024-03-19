@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Article from "./pages/Article/Article.jsx";
 import News from "./pages/News/News.jsx";
@@ -21,6 +21,7 @@ import image3 from "./assets/articles/putin.jpg";
 import image4 from "./assets/articles/tax.jpg";
 import image5 from "./assets/articles/ttc.jpg";
 import image6 from "./assets/articles/worldcup.jpg";
+import Search from "./pages/Search/Search.jsx";
 
 const App = () => {
   const articles = {
@@ -35,28 +36,26 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route exact path="/article" component={Article} />
-          {Object.entries(articles).map((entry, idx) => {
-            return (
-              <Route
-                key={idx}
-                path={`/article/${entry[0]}`}
-                render={(props) => (
-                  <Article
-                    articlePath={entry[1].contentPath}
-                    imagePath={entry[1].image}
-                    {...props}
-                  />
-                )}
-              />
-            );
-          })}
-          <Route path="/news" component={News} />
-        </Switch>
-      </div>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        {/* <Route exact path="/article" component={Article} /> */}
+        {Object.entries(articles).map((entry, idx) => {
+          return (
+            <Route
+              key={idx}
+              path={`/article/${entry[0]}`}
+              element={
+                <Article
+                  articlePath={entry[1].contentPath}
+                  imagePath={entry[1].image}
+                />
+              }
+            />
+          );
+        })}
+        <Route path="/search" element={<Search />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
       <Footer />
     </Router>
   );

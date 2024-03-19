@@ -26,7 +26,7 @@ const Footer = () => {
               </button>
             </form>
           </div>
-          <div className="col-md-2">
+          <div className="col-sm">
             <h5>Contact us</h5>
             <div className="small">
               <address>
@@ -40,7 +40,7 @@ const Footer = () => {
               <p>+1 (123)-456-7890</p>
             </div>
           </div>
-          <div className="col-md-2">
+          <div className="col-sm">
             <h5>Our socials</h5>
             <ul className="small m-0 p-0">
               <li>
