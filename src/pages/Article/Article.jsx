@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 import "./Article.css";
 
-const Article = ({articlePath, imagePath}) => {
+const Article = ({articlePath, imagePath, commentPath}) => {
    const [data, setData] = useState(null);
    const [comments, setComments] = useState([]);
    const [name, setName] = useState('');
@@ -25,9 +25,26 @@ const Article = ({articlePath, imagePath}) => {
       })();
    }, []);
 
+
+
+   useEffect(() => {
+      (async () => {
+         const result = await fetch(commentPath);
+         const lines = (await result.text()).split("\n").map((line) => {
+            const [name, comment, time] = line.split('|')
+            return {name, comment, time}
+         })
+
+         console.log(lines);
+
+         setComments(lines);
+      })();
+   }, []);
+
    const handleSubmit = (e) => {
       e.preventDefault();
-      setComments([...comments, {name, comment}]);
+      const currentTime = new Date().toLocaleString();
+      setComments([...comments, { name, comment, time: currentTime }]);
       setName('');
       setComment('');
    }
@@ -85,6 +102,7 @@ const Article = ({articlePath, imagePath}) => {
                            <div className="card-body">
                               <h5 className="card-title"><b>Name: {item.name}</b></h5>
                               <p className="card-text">Comment: {item.comment}</p>
+                              <p className="card-text"><small className="text-muted">Submitted at {item.time}</small></p>
                            </div>
                         </div>
                      ))}
