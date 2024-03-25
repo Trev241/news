@@ -6,7 +6,7 @@ import article3 from "../../assets/articles/putin.txt";
 import article4 from "../../assets/articles/tax.txt";
 import article5 from "../../assets/articles/ttc.txt";
 import article6 from "../../assets/articles/worldcup.txt";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Search = () => {
   const [searchParams] = useSearchParams();
