@@ -2,6 +2,8 @@ import React from "react";
 import "./NavBar.css";
 import { Link, useNavigate } from "react-router-dom";
 
+import logo from "../../images/logo.png";
+
 const Navbar = () => {
   const navigate = useNavigate();
 
@@ -18,12 +20,7 @@ const Navbar = () => {
         <div className="row">
           <div className="col d-flex justify-content-center align-items-center navbar-logo">
             <a href="/">
-              <img
-                src="/src/images/logo.png"
-                alt="SYT News Logo"
-                width={150}
-                height={50}
-              />
+              <img src={logo} alt="SYT News Logo" width={150} height={50} />
             </a>
           </div>
 
