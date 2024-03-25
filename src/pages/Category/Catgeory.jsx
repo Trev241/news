@@ -23,7 +23,7 @@ const Category = ({ categoryName, articles }) => {
       console.log(buffer);
       setData(buffer);
     })();
-  }, []);
+  }, [articles]);
 
   return (
     <div className="container">
