@@ -23,21 +23,58 @@ import image5 from "./assets/articles/ttc.jpg";
 import image6 from "./assets/articles/worldcup.jpg";
 import Search from "./pages/Search/Search.jsx";
 
-import comment1 from "./assets/articles/nba_comment.txt"
-import comment2 from "./assets/articles/premier_comment.txt"
-import comment3 from "./assets/articles/putin_comment.txt"
-import comment4 from "./assets/articles/tax_comment.txt"
+import comment1 from "./assets/articles/nba_comment.txt";
+import comment2 from "./assets/articles/premier_comment.txt";
+import comment3 from "./assets/articles/putin_comment.txt";
+import comment4 from "./assets/articles/tax_comment.txt";
 import comment5 from "./assets/articles/ttc_comment.txt";
-import comment6 from "./assets/articles/worldcup_comment.txt"
+import comment6 from "./assets/articles/worldcup_comment.txt";
+import Category from "./pages/Category/Catgeory.jsx";
 
 const App = () => {
   const articles = {
-    nba: { contentPath: article1, image: image1, comment: comment1 },
-    premier: { contentPath: article2, image: image2, comment: comment2 },
-    putin: { contentPath: article3, image: image3, comment: comment3 },
-    tax: { contentPath: article4, image: image4, comment: comment4 },
-    ttc: { contentPath: article5, image: image5, comment: comment5 },
-    worldcup: { contentPath: article6, image: image6, comment: comment6 },
+    nba: {
+      contentPath: article1,
+      image: image1,
+      comment: comment1,
+      path: "nba",
+    },
+    premier: {
+      contentPath: article2,
+      image: image2,
+      comment: comment2,
+      path: "premier",
+    },
+    putin: {
+      contentPath: article3,
+      image: image3,
+      comment: comment3,
+      path: "putin",
+    },
+    tax: {
+      contentPath: article4,
+      image: image4,
+      comment: comment4,
+      path: "tax",
+    },
+    ttc: {
+      contentPath: article5,
+      image: image5,
+      comment: comment5,
+      path: "ttc",
+    },
+    worldcup: {
+      contentPath: article6,
+      image: image6,
+      comment: comment6,
+      path: "worldcup",
+    },
+  };
+
+  const categories = {
+    local: [articles.worldcup, articles.ttc, articles.tax],
+    global: [articles.putin],
+    sports: [articles.worldcup, articles.nba],
   };
 
   return (
@@ -46,21 +83,26 @@ const App = () => {
       <Routes>
         <Route index path="/" element={<Home />} />
         {/* <Route exact path="/article" component={Article} /> */}
-        {Object.entries(articles).map((entry, idx) => {
-          return (
-            <Route
-              key={idx}
-              path={`/article/${entry[0]}`}
-              element={
-                <Article
-                  articlePath={entry[1].contentPath}
-                  imagePath={entry[1].image}
-                  commentPath={entry[1].comment}
-                />
-              }
-            />
-          );
-        })}
+        {Object.entries(articles).map((entry, idx) => (
+          <Route
+            key={idx}
+            path={`/article/${entry[0]}`}
+            element={
+              <Article
+                articlePath={entry[1].contentPath}
+                imagePath={entry[1].image}
+                commentPath={entry[1].comment}
+              />
+            }
+          />
+        ))}
+        {Object.entries(categories).map((entry, idx) => (
+          <Route
+            key={idx}
+            path={`/category/${entry[0]}`}
+            element={<Category categoryName={entry[0]} articles={entry[1]} />}
+          />
+        ))}
         <Route path="/search" element={<Search />} />
         <Route path="/news" element={<News />} />
       </Routes>

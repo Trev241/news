@@ -70,7 +70,10 @@ const Article = ({ articlePath, imagePath, commentPath }) => {
             <form onSubmit={handleSubmit}>
               <div className="border rounded mb-2">
                 <div className="container">
-                  <label for="inputName" className="col-sm-2 col-form-label">
+                  <label
+                    htmlFor="inputName"
+                    className="col-sm-2 col-form-label"
+                  >
                     Name
                   </label>
                   <div className="col-sm-10">

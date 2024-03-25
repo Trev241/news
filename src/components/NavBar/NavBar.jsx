@@ -27,40 +27,25 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* <div className="col-lg-6 p-3">
-            <ul className="d-flex flex-wrap m-0 p-0 justify-content-between">
+          <div className="col-lg-6 p-3">
+            <ul className="d-flex flex-wrap m-0 p-0 justify-content-evenly">
               <li className="">
-                <a href="/news" className="navbar-link">
-                  News
+                <a href="/category/local" className="navbar-link">
+                  Local
                 </a>
               </li>
               <li className="">
-                <a href="/sport" className="navbar-link">
+                <a href="/category/global" className="navbar-link">
+                  Global
+                </a>
+              </li>
+              <li className="">
+                <a href="/category/sports" className="navbar-link">
                   Sports
                 </a>
               </li>
-              <li className="">
-                <a href="/radio" className="navbar-link">
-                  Radio
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a href="/tv" className="navbar-link">
-                  TV
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a href="/trending" className="navbar-link">
-                  Trending
-                </a>
-              </li>
-              <li className="navbar-item">
-                <a href="#" className="navbar-link">
-                  More
-                </a>
-              </li>
             </ul>
-          </div> */}
+          </div>
 
           <div className="col d-flex justify-content-center align-items-center">
             <form onSubmit={onSearch}>
