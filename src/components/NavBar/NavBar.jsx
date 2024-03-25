@@ -27,7 +27,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="col-lg-6 p-3">
+          {/* <div className="col-lg-6 p-3">
             <ul className="d-flex flex-wrap m-0 p-0 justify-content-between">
               <li className="">
                 <a href="/news" className="navbar-link">
@@ -60,7 +60,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="col d-flex justify-content-center align-items-center">
             <form onSubmit={onSearch}>
