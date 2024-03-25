@@ -56,7 +56,7 @@ const Search = () => {
             return (
               <li key={idx} className="mb-2">
                 <div>
-                  <a href={`/article/${result}`}>{lines[0]}</a>
+                  <Link to={`/article/${result}`}>{lines[0]}</Link>
                   <p>{lines[1].slice(0, 100).trim()}...</p>
                 </div>
               </li>
