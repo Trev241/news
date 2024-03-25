@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -30,19 +30,19 @@ const Navbar = () => {
           <div className="col-lg-6 p-3">
             <ul className="d-flex flex-wrap m-0 p-0 justify-content-evenly">
               <li className="">
-                <a href="/category/local" className="navbar-link">
+                <Link to="/category/local" className="navbar-link">
                   Local
-                </a>
+                </Link>
               </li>
               <li className="">
-                <a href="/category/global" className="navbar-link">
+                <Link to="/category/global" className="navbar-link">
                   Global
-                </a>
+                </Link>
               </li>
               <li className="">
-                <a href="/category/sports" className="navbar-link">
+                <Link to="/category/sports" className="navbar-link">
                   Sports
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
