@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Footer.css";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -22,7 +23,8 @@ const Footer = () => {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                Submit
+                <MdEmail className="mb-1" />
+                &nbsp; Subscribe
               </button>
             </form>
           </div>
