@@ -70,7 +70,7 @@ const Article = ({ articlePath, imagePath, commentPath }) => {
           <section className="my-4">
             <h2>Comments</h2>
 
-            <div className="d-flex my-4 border rounded p-4">
+            <div className="d-flex my-4 border rounded p-4 bg-light">
               <IoPersonCircleOutline className="display-1" />
 
               <form className="flex-grow-1" onSubmit={handleSubmit}>
