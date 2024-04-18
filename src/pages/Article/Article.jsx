@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./Article.css";
+import { IoPersonCircleOutline, IoPersonCircleSharp } from "react-icons/io5";
+import { FaPen } from "react-icons/fa";
 
 const Article = ({ articlePath, imagePath, commentPath }) => {
   const [data, setData] = useState(null);
@@ -65,32 +67,35 @@ const Article = ({ articlePath, imagePath, commentPath }) => {
           </section>
         </div>
         <div className="container border-top border-2 my-5 px-5">
-          <section className="mb-4">
+          <section className="my-4">
             <h2>Comments</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="border rounded mb-2">
-                <div className="container">
-                  <label
+
+            <div className="d-flex my-4 border rounded p-4">
+              <IoPersonCircleOutline className="display-1" />
+
+              <form className="flex-grow-1" onSubmit={handleSubmit}>
+                <div className="container-fluid">
+                  {/* <label
                     htmlFor="inputName"
                     className="col-sm-2 col-form-label"
                   >
                     Name
-                  </label>
-                  <div className="col-sm-10">
+                  </label> */}
+                  <div className="col-sm-10 mb-2">
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control w-100"
                       id="inputName"
-                      placeholder="Others will see the name you enter here above your comment"
+                      placeholder="Name"
                       onChange={(e) => setName(e.target.value)}
                     />
                   </div>
-                  <label
+                  {/* <label
                     htmlFor="exampleInputComment1"
                     className="form-label mt-2"
                   >
                     Comment
-                  </label>
+                  </label> */}
                   <textarea
                     className="form-control"
                     id="exampleInputComment"
@@ -99,26 +104,34 @@ const Article = ({ articlePath, imagePath, commentPath }) => {
                     placeholder="Let others know what you think."
                     onChange={(e) => setComment(e.target.value)}
                   ></textarea>
-                  <button type="submit" className="mt-2 btn btn-primary">
-                    Post
-                  </button>
-                </div>
-              </div>
-            </form>
-            <div className="mt-4">
-              {comments.map((item, index) => (
-                <div className="card w-100 mb-2" key={index}>
-                  <div className="card-body">
-                    <div className="card-title">
-                      <b>{item.name}</b>&nbsp;
-                      <small className="text-muted">{item.time}</small>
-                    </div>
-                    <p className="card-text">{item.comment}</p>
-                    <p className="card-text"></p>
+                  <div className="d-flex justify-content-end">
+                    <button
+                      type="submit"
+                      className="ms-auto mt-2 btn btn-primary"
+                    >
+                      <FaPen className="mb-1" />
+                      &nbsp;&nbsp;
+                      <span>Publish</span>
+                    </button>
                   </div>
                 </div>
-              ))}
+              </form>
             </div>
+
+            <ul className="p-0">
+              {comments.map((item, idx) => (
+                <li key={idx} className="mb-4">
+                  <div className="d-flex">
+                    <IoPersonCircleSharp className="display-1 me-2" />
+                    <div className="w-75">
+                      <b>{item.name}</b>
+                      <p>{item.comment}</p>
+                      <small>at {item.time}</small>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </section>
         </div>
       </div>

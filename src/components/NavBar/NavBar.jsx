@@ -59,7 +59,7 @@ const Navbar = () => {
               placeholder="Search"
             />
             <button type="submit" className="btn btn-secondary">
-              <CiSearch />
+              <CiSearch className="mb-1" />
             </button>
           </form>
         </div>
