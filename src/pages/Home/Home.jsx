@@ -37,27 +37,26 @@ const Home = () => {
                   <Link to="article/worldcup">
                     <p>Canada Prepares for Soccer's 2026 World Cup</p>
                   </Link>
-                  <a href="">
+                  <Link to="article/resilience">
                     <p>
-                      Canadian men net new national scoring record in 11-0 win
-                      over Cayman Islands
+                      Resilience is one of Canadian women's soccer team's greatest assets as it looks to defend Olympic gold
                     </p>
-                  </a>
+                  </Link>
                 </div>
                 <div className="news-item">
                   <h4>Hockey</h4>
-                  <a href="">
+                  <Link to="article/pwhl">
                     <p>
                       PWHL Toronto wins 10th straight, edging Montreal in
                       Pittsburgh for share of 1st place
                     </p>
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to="article/unb">
                     <p>
                       UNB men's hockey team blanks UQTR to complete perfect
                       season, repeat as University Cup champion{" "}
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -67,30 +66,30 @@ const Home = () => {
               <h2>Popular</h2>
               <div className="news-list">
                 <div className="news-item">
-                  <a href="">
+                  <Link to="article/trump">
                     <p>
                       Trump unable to post bond for $454M US civil judgment, his
                       lawyers say
                     </p>
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to="article/china">
                     <p>
                       This business owner brought most of her manufacturing home
                       from China — and feels punished for it
                     </p>
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to="article/ottawa">
                     <p>
                       Ottawa police shocked, struck, kicked Black man in case of
                       mistaken identity
                     </p>
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to="article/singlelife">
                     <p>
                       As more people choose the single life, researchers ask:
                       are they happier?
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -102,7 +101,7 @@ const Home = () => {
         <h2>Happening in Toronto</h2>
         <div className="row news-list">
           <div className="col-sm">
-            <a href="#">
+            <Link to="article/toronto_new1">
               <img
                 className="img-fluid my-2 rounded"
                 src={toronto_n1}
@@ -112,14 +111,14 @@ const Home = () => {
                 A car was stolen every 40 minutes in Toronto last year, police
                 chief says
               </h4>
-            </a>
+            </Link>
             <p>
               More than 12,000 stolen cars last year valued at almost $800
               million
             </p>
           </div>
           <div className="col-sm">
-            <a href="#">
+            <Link to="article/toronto_new2">
               <img
                 className="img-fluid my-2 rounded"
                 src={toronto_n2}
@@ -129,14 +128,14 @@ const Home = () => {
                 How one Ontario city is using modular cabins to help with
                 'unprecedented' homelessness crisis
               </h4>
-            </a>
+            </Link>
             <p>
               Peterborough mayor says plan is drawing interest from across the
               country
             </p>
           </div>
           <div className="col-sm">
-            <a href="#">
+            <Link to="article/toronto_new3">
               <img
                 className="img-fluid my-2 rounded"
                 src={toronto_n3}
@@ -146,7 +145,7 @@ const Home = () => {
                 Shoppers Drug Mart says it doesn't have medication review
                 targets, but records show it does
               </h4>
-            </a>
+            </Link>
             <p>
               Current and former owners, pharmacists say corporate management
               pressured them to meet ‘unethical’ targets
