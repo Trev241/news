@@ -27,22 +27,26 @@ const Category = ({ categoryName, articles }) => {
 
   return (
     <div className="container">
-      <h1>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
+      <h1
+        className="display-1 mt-5 text-center"
+        style={{ fontVariant: "small-caps" }}
+      >
+        {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}
+      </h1>
+      <hr className="mb-5" />
       {data &&
         data.map((entry, idx) => (
-          <div key={idx} className="container">
-            <Link to={`/article/${entry.path}`}>
-              <div className="row item p-3">
-                <div className="col-2">
-                  <img className="img-fluid rounded" src={entry.image} />
-                </div>
-                <div className="col text-dark">
-                  <h3>{entry.heading}</h3>
-                  <p className="lead">{entry.lead}...</p>
-                </div>
+          <Link to={`/article/${entry.path}`}>
+            <div className="row item p-3">
+              <div className="col-md-3 my-1">
+                <img className="img-fluid rounded" src={entry.image} />
               </div>
-            </Link>
-          </div>
+              <div className="col text-dark">
+                <h3>{entry.heading}</h3>
+                <p className="lead">{entry.lead}...</p>
+              </div>
+            </div>
+          </Link>
         ))}
     </div>
   );
