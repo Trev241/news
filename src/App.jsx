@@ -21,9 +21,9 @@ import article10 from "./assets/articles/trump.txt";
 import article11 from "./assets/articles/china.txt";
 import article12 from "./assets/articles/ottawa.txt";
 import article13 from "./assets/articles/singlelife.txt";
-import article14 from "./assets/toronto-news/toronto-n1.txt"
-import article15 from "./assets/toronto-news/toronto-n2.txt"
-import article16 from "./assets/toronto-news/toronto-n3.txt"
+import article14 from "./assets/toronto-news/toronto-n1.txt";
+import article15 from "./assets/toronto-news/toronto-n2.txt";
+import article16 from "./assets/toronto-news/toronto-n3.txt";
 
 import image1 from "./assets/articles/nba.jpg";
 import image2 from "./assets/articles/premier.jpg";
@@ -31,18 +31,17 @@ import image3 from "./assets/articles/putin.jpg";
 import image4 from "./assets/articles/tax.jpg";
 import image5 from "./assets/articles/ttc.jpg";
 import image6 from "./assets/articles/worldcup.jpg";
-import image7 from "./assets/articles/resilience.jpg"
+import image7 from "./assets/articles/resilience.jpg";
 import image8 from "./assets/articles/pwhl.jpg";
 import image9 from "./assets/articles/unb.jpg";
 import image10 from "./assets/articles/trump.jpg";
 import image11 from "./assets/articles/china.jpg";
 import image12 from "./assets/articles/ottawa.jpg";
 import image13 from "./assets/articles/singlelife.jpg";
-import image14 from "./assets/toronto-news/toronto-n1.png"
-import image15 from "./assets/toronto-news/toronto-n2.png"
-import image16 from "./assets/toronto-news/toronto-n3.png"
+import image14 from "./assets/toronto-news/toronto-n1.png";
+import image15 from "./assets/toronto-news/toronto-n2.png";
+import image16 from "./assets/toronto-news/toronto-n3.png";
 import Search from "./pages/Search/Search.jsx";
-
 
 import comment1 from "./assets/articles/nba_comment.txt";
 import comment2 from "./assets/articles/premier_comment.txt";
@@ -52,14 +51,14 @@ import comment5 from "./assets/articles/ttc_comment.txt";
 import comment6 from "./assets/articles/worldcup_comment.txt";
 import comment7 from "./assets/articles/resilience_comment.txt";
 import comment8 from "./assets/articles/pwhl_comment.txt";
-import comment9 from './assets/articles/unb_comment.txt';
+import comment9 from "./assets/articles/unb_comment.txt";
 import comment10 from "./assets/articles/trump_comment.txt";
 import comment11 from "./assets/articles/china_comment.txt";
 import comment12 from "./assets/articles/ottawa_comment.txt";
 import comment13 from "./assets/articles/singlelife_comment.txt";
-import comment14 from "./assets/toronto-news/toronto-n1_comment.txt"
-import comment15 from "./assets/toronto-news/toronto-n2_comment.txt"
-import comment16 from "./assets/toronto-news/toronto-n3_comment.txt"
+import comment14 from "./assets/toronto-news/toronto-n1_comment.txt";
+import comment15 from "./assets/toronto-news/toronto-n2_comment.txt";
+import comment16 from "./assets/toronto-news/toronto-n3_comment.txt";
 import Category from "./pages/Category/Catgeory.jsx";
 
 const App = () => {
@@ -163,9 +162,24 @@ const App = () => {
   };
 
   const categories = {
-    local: [articles.worldcup, articles.ttc, articles.tax, articles.singlelife, articles.ottawa, articles.toronto_new1, articles.toronto_new2, articles.toronto_new3],
+    local: [
+      articles.worldcup,
+      articles.ttc,
+      articles.tax,
+      articles.singlelife,
+      articles.ottawa,
+      articles.toronto_new1,
+      articles.toronto_new2,
+      articles.toronto_new3,
+    ],
     global: [articles.putin, articles.china, articles.trump],
-    sports: [articles.worldcup, articles.nba, articles.resilience, articles.pwhl, articles.unb],
+    sports: [
+      articles.worldcup,
+      articles.nba,
+      articles.resilience,
+      articles.pwhl,
+      articles.unb,
+    ],
   };
 
   return (

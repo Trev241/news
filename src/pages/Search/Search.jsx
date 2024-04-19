@@ -6,6 +6,17 @@ import article3 from "../../assets/articles/putin.txt";
 import article4 from "../../assets/articles/tax.txt";
 import article5 from "../../assets/articles/ttc.txt";
 import article6 from "../../assets/articles/worldcup.txt";
+import article7 from "../../assets/articles/resilience.txt";
+import article8 from "../../assets/articles/pwhl.txt";
+import article9 from "../../assets/articles/unb.txt";
+import article10 from "../../assets/articles/trump.txt";
+import article11 from "../../assets/articles/china.txt";
+import article12 from "../../assets/articles/ottawa.txt";
+import article13 from "../../assets/articles/singlelife.txt";
+import article14 from "../../assets/toronto-news/toronto-n1.txt";
+import article15 from "../../assets/toronto-news/toronto-n2.txt";
+import article16 from "../../assets/toronto-news/toronto-n3.txt";
+
 import { Link, useSearchParams } from "react-router-dom";
 
 const Search = () => {
@@ -20,6 +31,16 @@ const Search = () => {
     tax: article4,
     ttc: article5,
     worldcup: article6,
+    resilience: article7,
+    pwhl: article8,
+    unb: article9,
+    trump: article10,
+    china: article11,
+    ottawa: article12,
+    singlelife: article13,
+    toronto_new1: article14,
+    toronto_new2: article15,
+    toronto_new3: article16,
   };
 
   useEffect(() => {
