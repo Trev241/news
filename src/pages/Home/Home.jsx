@@ -1,101 +1,147 @@
-import React from "react";
-import image from "./../../assets/articles/ttc.jpg";
+import React, { useState } from "react";
+
+import caroImage1 from "./../../assets/articles/ttc.jpg";
+import caroImage2 from "./../../assets/articles/worldcup.jpg";
+
 import toronto_n1 from "./../../assets/toronto-news/toronto-n1.png";
 import toronto_n2 from "./../../assets/toronto-news/toronto-n2.png";
 import toronto_n3 from "./../../assets/toronto-news/toronto-n3.png";
+
 import "./Home.css";
+
 import { Link } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const Home = () => {
+  const [index, setIndex] = useState(0);
+  const caroTitles = [
+    "TTC service changes starting Sunday",
+    "Canada Prepares for Soccer's 2026 World Cup",
+  ];
+  const caroLeads = [
+    "Starting Sunday the TTC is changing bus service on several key routes and returning streetcar service to Broadview Station. In a news release issued Friday, the transit company said it is increasing capacity and frequency on the 29 Dufferin route on Saturday nights.",
+    "While no new stadiums will be built in Vancouver or Toronto, multimillion-dollar renovations must be finished on a tight deadline. This week we learned how many World Cup games will take place in Vancouver and Toronto, which will co-host the men’s soccer tournament with cities in the United States and Mexico in 2026.",
+  ];
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
   return (
     <div className="container-fluid">
-      <div className="container-fluid my-5 main-content">
-        <div className="row">
-          <section className="col-lg-6 main-feature">
-            <div className="featured-news">
-              <div className="news-list">
-                <div>
-                  <Link to="article/ttc">
-                    <h3>TTC service changes starting Sunday</h3>
-                    <p>Several changes to TTC service beginning this Sunday</p>
-                    <img
-                      className="rounded img-fluid"
-                      src={image}
-                      alt="Featured News 1"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+      <Container fluid className="mt-5">
+        <Row className="mb-5">
+          <section className="col-lg-5 mb-2">
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+              <Carousel.Item>
+                <Link to="article/ttc">
+                  <img
+                    className="rounded img-fluid"
+                    src={caroImage1}
+                    alt="Featured News 1"
+                  />
+                </Link>
+              </Carousel.Item>
+
+              <Carousel.Item>
+                <Link to="article/worldcup">
+                  <img
+                    className="rounded img-fluid"
+                    src={caroImage2}
+                    alt="Featured News 1"
+                  />
+                </Link>
+              </Carousel.Item>
+            </Carousel>
           </section>
+
           <section className="col-md">
-            <div className="sidebar-news">
-              <h2>Sports</h2>
-              <div className="news-list">
-                <div className="news-item">
-                  <h4>World cup</h4>
-                  <Link to="article/worldcup">
-                    <p>Canada Prepares for Soccer's 2026 World Cup</p>
-                  </Link>
-                  <Link to="article/resilience">
-                    <p>
-                      Resilience is one of Canadian women's soccer team's greatest assets as it looks to defend Olympic gold
-                    </p>
-                  </Link>
-                </div>
-                <div className="news-item">
-                  <h4>Hockey</h4>
-                  <Link to="article/pwhl">
-                    <p>
-                      PWHL Toronto wins 10th straight, edging Montreal in
-                      Pittsburgh for share of 1st place
-                    </p>
-                  </Link>
-                  <Link to="article/unb">
-                    <p>
-                      UNB men's hockey team blanks UQTR to complete perfect
-                      season, repeat as University Cup champion{" "}
-                    </p>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link to="article/worldcup">
+              <h1>{caroTitles[index]}</h1>
+            </Link>
+            <p className="lead">{caroLeads[index]}</p>
           </section>
-          <section className="col-md">
-            <div className="menu-news">
-              <h2>Popular</h2>
-              <div className="news-list">
-                <div className="news-item">
-                  <Link to="article/trump">
-                    <p>
-                      Trump unable to post bond for $454M US civil judgment, his
-                      lawyers say
-                    </p>
-                  </Link>
-                  <Link to="article/china">
-                    <p>
-                      This business owner brought most of her manufacturing home
-                      from China — and feels punished for it
-                    </p>
-                  </Link>
-                  <Link to="article/ottawa">
-                    <p>
-                      Ottawa police shocked, struck, kicked Black man in case of
-                      mistaken identity
-                    </p>
-                  </Link>
-                  <Link to="article/singlelife">
-                    <p>
-                      As more people choose the single life, researchers ask:
-                      are they happier?
-                    </p>
-                  </Link>
+        </Row>
+
+        <Row className="mb-5">
+          <h2>Other categories</h2>
+          <Container>
+            <Row>
+              <Col md className="border rounded p-3 bg-light m-1">
+                <h3>Popular</h3>
+                <div className="news-list">
+                  <div className="news-item">
+                    <Link to="article/trump">
+                      <p className="lead text-dark clickable">
+                        Trump unable to post bond for $454M US civil judgment,
+                        his lawyers say
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/china">
+                      <p className="lead text-dark clickable">
+                        This business owner brought most of her manufacturing
+                        home from China — and feels punished for it
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/ottawa">
+                      <p className="lead text-dark clickable">
+                        Ottawa police shocked, struck, kicked Black man in case
+                        of mistaken identity
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/singlelife">
+                      <p className="lead text-dark clickable">
+                        As more people choose the single life, researchers ask:
+                        are they happier?
+                      </p>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+              </Col>
+
+              <Col md className="border rounded p-3 bg-light m-1">
+                <h3>Sports</h3>
+                <div className="news-list">
+                  <div className="news-item">
+                    <Link to="article/worldcup">
+                      <p className="lead text-dark clickable">
+                        Canada Prepares for Soccer's 2026 World Cup
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/resilience">
+                      <p className="lead text-dark clickable">
+                        Resilience is one of Canadian women's soccer team's
+                        greatest assets as it looks to defend Olympic gold
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/pwhl">
+                      <p className="lead text-dark clickable">
+                        PWHL Toronto wins 10th straight, edging Montreal in
+                        Pittsburgh for share of 1st place
+                      </p>
+                    </Link>
+                    <hr />
+                    <Link to="article/unb">
+                      <p className="lead text-dark clickable">
+                        UNB men's hockey team blanks UQTR to complete perfect
+                        season, repeat as University Cup champion{" "}
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </Row>
+      </Container>
 
       <section className="container-fluid mb-5 additional-news">
         <h2>Happening in Toronto</h2>
